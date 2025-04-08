@@ -6,12 +6,19 @@
 /*   By: edfreder <edfreder@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:17:41 by edfreder          #+#    #+#             */
-/*   Updated: 2025/04/03 17:17:45 by edfreder         ###   ########.fr       */
+/*   Updated: 2025/04/08 22:52:50 by edfreder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copy n bytes from src to dest
+ * @param dest Pointer to copy to from src
+ * @param src Pointer to be copied
+ * @param n Number of bytes to be copied
+ * @return Return dest
+*/
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;

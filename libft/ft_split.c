@@ -6,12 +6,11 @@
 /*   By: edfreder <edfreder@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 11:59:58 by edfreder          #+#    #+#             */
-/*   Updated: 2025/04/05 22:16:29 by edfreder         ###   ########.fr       */
+/*   Updated: 2025/04/08 23:11:31 by edfreder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_count_words(char const *s, char c)
 {

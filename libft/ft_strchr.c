@@ -6,7 +6,7 @@
 /*   By: edfreder <edfreder@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:56:32 by edfreder          #+#    #+#             */
-/*   Updated: 2025/04/05 22:13:09 by edfreder         ###   ########.fr       */
+/*   Updated: 2025/04/08 22:58:25 by edfreder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (*str)
+	while (*s)
 	{
-		if (*str == (char)c)
-			return (str);
-		str++;
+		if (*(unsigned char *)s == (unsigned char)c)
+			return ((char *)s);
+		s++;
 	}
-	if (*str == c)
-		return (str);
+	if (*(unsigned char *)s == (unsigned char)c)
+		return ((char *)s);
 	return (NULL);
 }

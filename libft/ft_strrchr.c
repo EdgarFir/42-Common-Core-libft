@@ -6,7 +6,7 @@
 /*   By: edfreder <edfreder@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 18:03:56 by edfreder          #+#    #+#             */
-/*   Updated: 2025/04/05 22:07:41 by edfreder         ###   ########.fr       */
+/*   Updated: 2025/04/08 23:02:14 by edfreder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	s_len = ft_strlen(s);
 	str = (char *)s + s_len;
 	i = 0;
-	while (i <= s_len && *str != (unsigned char)c)
+	while (i <= s_len && *(unsigned char *)str != (char)c)
 	{
 		str--;
 		i++;
