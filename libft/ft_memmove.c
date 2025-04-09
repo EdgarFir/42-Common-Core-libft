@@ -6,7 +6,7 @@
 /*   By: edfreder <edfreder@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:16:30 by edfreder          #+#    #+#             */
-/*   Updated: 2025/04/08 23:00:26 by edfreder         ###   ########.fr       */
+/*   Updated: 2025/04/09 11:33:24 by edfreder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*src_p;
 	size_t		i;
 
+	if (!dest && !src)
+		return (NULL);
 	dest_p = dest;
 	src_p = src;
 	if (dest_p < src_p)
 	{
-		i = 0;
-		while (i < n)
-		{
-			dest_p[i] = src_p[i];
-			i++;
-		}
+		ft_memcpy(dest, src, n);
 	}
 	else
 	{

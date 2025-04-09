@@ -6,7 +6,7 @@
 /*   By: edfreder <edfreder@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 11:59:58 by edfreder          #+#    #+#             */
-/*   Updated: 2025/04/08 23:11:31 by edfreder         ###   ########.fr       */
+/*   Updated: 2025/04/09 21:12:49 by edfreder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@ static int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
+static void	ft_free_split(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
 static char	**ft_cpy_arr(char **arr, char const *s, char c, int words)
 {
 	int		i;
@@ -49,12 +62,14 @@ static char	**ft_cpy_arr(char **arr, char const *s, char c, int words)
 			len++;
 		new_str = ft_substr(s, j, len);
 		if (!new_str)
+		{
+			ft_free_split(arr);
 			return (NULL);
+		}
 		arr[i] = new_str;
 		j += len;
 		i++;
 	}
-	arr[words] = NULL;
 	return (arr);
 }
 
@@ -63,15 +78,15 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	words = ft_count_words(s, c);
-	arr = (char **)malloc(sizeof(char *) * (words + 1));
+	arr = (char **)ft_calloc(words + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
 	arr = ft_cpy_arr(arr, s, c, words);
 	if (!arr)
-	{
-		free(arr);
 		return (NULL);
-	}
+	arr[words] = NULL;
 	return (arr);
 }
